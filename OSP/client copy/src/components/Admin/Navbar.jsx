@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa';
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
+  const navigate = useNavigate();
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
+
+  const handleLogout = () =>{
+    // console.log("logout")
+    localStorage.removeItem('userInfo');
+    // navigate('/');
+  }
 
   return ( 
     <>
@@ -57,7 +63,7 @@ const Navbar = () => {
                     <Link className="dropdown-item" to="/admin/profile">View Profile</Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/admin/logout">Logout</Link>
+                    <Link className="dropdown-item" onClick={handleLogout} to='/'>Logout</Link>
                   </li>
                 </ul>
               </li>

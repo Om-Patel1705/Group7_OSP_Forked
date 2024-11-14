@@ -60,7 +60,7 @@ const authRole = async (req, res) => {
       // console.log(userExists.rows[0]);
 
       if(role == userExists.rows[0].role){
-        res.status(201).json({
+        return res.status(201).json({
           
           username: userExists.rows[0].username,
           email: userExists.rows[0].email,

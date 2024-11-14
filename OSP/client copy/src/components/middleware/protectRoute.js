@@ -49,7 +49,7 @@ const PrivateRoute = ({ children }) => {
     if (userInfo) {
       roleCheck(userInfo);
     } else {
-        alert("You don't have permission to access")
+        console.log("You don't have permission to access")
       navigate("/"); 
     }
   }, [user, navigate]);

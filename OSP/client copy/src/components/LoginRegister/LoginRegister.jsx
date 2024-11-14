@@ -57,7 +57,7 @@ const LoginRegister = () => {
         alert("Session expired, please log in again.");
       }
     } catch (err) {
-      console.log("Unexpected Error. Please login again.");
+      console.log("Unexpected Error"+err);
     }
   };
 
@@ -77,7 +77,7 @@ const LoginRegister = () => {
    const handleLoginSubmit = async (event) => {
     event.preventDefault();
     
-    console.log(selectedRole);
+    // console.log(selectedRole);
     try {
       const response = await fetch(`${baseURL}/api/user/login`, {
         method: "POST",
@@ -93,7 +93,7 @@ const LoginRegister = () => {
       });
 
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       if (response.ok) {
         localStorage.setItem("userInfo", JSON.stringify(data));
         
@@ -249,7 +249,7 @@ const LoginRegister = () => {
                   <label>
                     <input type="checkbox" /> Remember me
                   </label>
-                  <a href="#" onClick={handleForgotPassword}>
+                  <a onClick={handleForgotPassword} >
                     Forgot Password?
                   </a>
                 </div>

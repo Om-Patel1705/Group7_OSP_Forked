@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const pool = require("./config/db");
 const userRoutes = require("./Routes/userRoutes");
 const scholarshipRoutes = require("./Routes/scholarshipRoutes");
+const resetPassRoute = require("./Routes/resetPassRoute");
 
 const port = process.env.PORT || 8080;
 
@@ -20,6 +21,7 @@ app.use(
 
 app.use("/api/user", userRoutes);
 app.use("/api/scholarship", scholarshipRoutes);
+app.use("/api/passwordreset", resetPassRoute);
 
 app.listen(port, () => {
   console.log(`Server is running on ${port}`);
