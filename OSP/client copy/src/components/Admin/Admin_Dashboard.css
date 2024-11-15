@@ -71,17 +71,13 @@
 
 .view-applications-button {
     padding: 0.5rem 1rem;
-    background-color: #ff8500;
+    background-color: #0037ff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
-}
-
-.view-applications-button:hover {
-    background-color: #e07a00;
 }
 
 /* Options menu styling */

@@ -40,12 +40,24 @@
   margin-bottom: 5px;
 }
 
+.required::after {
+  content: " *";
+  color: red;
+}
+
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ddd;
   border-radius: 4px;
+}
+
+.form-group input[type="number"]::-webkit-inner-spin-button,
+.form-group input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .form-group input[type="date"] {
@@ -69,7 +81,7 @@
 .submit-button {
   width: 100%;
   padding: 12px;
-  background-color: #4CAF50;
+  background-color: #0037ff;
   color: #fff;
   font-size: 16px;
   font-weight: bold;
@@ -81,16 +93,50 @@
 }
 
 .submit-button:hover {
-  background-color: #45a049;
+  background-color: #2645b8;
+}
+.selected-items {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-/* Additional styles for form responsiveness */
-@media (max-width: 768px) {
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
+.item-chip {
+  background-color: #e0e0e0;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s;
+}
 
-  .admin-add-scholarship h1 {
-    font-size: 20px;
-  }
+.item-chip:hover {
+  background-color: #d1d1d1;
+}
+
+/* Improved styling for the remove button */
+.item-chip button {
+  background: none;
+  border: none;
+  font-size: 12px; /* Smaller font size */
+  color: #000000;
+  cursor: pointer;
+  margin-left: 6px;
+  padding: 2px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.item-chip button:hover {
+  color: #000000;
+  background-color: #ff4d4d;
 }
