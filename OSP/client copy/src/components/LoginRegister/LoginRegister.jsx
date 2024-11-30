@@ -5,7 +5,7 @@ import { useContextState } from "../../context/userProvider";
 import "../../index.css";
 
 const images = ["/image1.png", "/image2.png", "/image3.png", "/image4.png"];
-var endpoint = "http://localhost:8080";
+var endpoint = "https://group7-osp-forked.onrender.com";
 
 const LoginRegister = () => {
   const [isRegistering, setIsRegistering] = useState(false);

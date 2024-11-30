@@ -15,7 +15,7 @@ const ListofScholarship = () => {
       // console.log('working');
       try {
         const response = await fetch(
-          `http://localhost:8080/api/scholarship/getScholarships`,
+          `https://group7-osp-forked.onrender.com/api/scholarship/getScholarships`,
           {
             headers: {
               "Content-Type": "application/json",

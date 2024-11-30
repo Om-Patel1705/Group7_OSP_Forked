@@ -744,7 +744,7 @@ const Profile = () => {
 
     console.log("f", Femail);
 
-    const endpoint1 = "http://localhost:8080/api/user/getprofile/";
+    const endpoint1 = "https://group7-osp-forked.onrender.com/api/user/getprofile/";
     const id2 = endpoint1 + email;
 
     console.log(id2);
@@ -817,7 +817,7 @@ const Profile = () => {
       }
     };
 
-    const endpoint = "http://localhost:8080/api/user/getemail/";
+    const endpoint = "https://group7-osp-forked.onrender.com/api/user/getemail/";
     const id = endpoint + email;
 
     console.log(email);
@@ -891,7 +891,7 @@ const Profile = () => {
         const formData2 = new FormData();
         formData2.append("file", file);
 
-        const endpoint2 = `http://localhost:8080/api/user/pdf/${Femail}/${key}`;
+        const endpoint2 = `https://group7-osp-forked.onrender.com/api/user/pdf/${Femail}/${key}`;
 
         console.log("ff", endpoint2);
 
@@ -924,7 +924,7 @@ const Profile = () => {
     console.log("out of file");
 
     try {
-      const response = await fetch("http://localhost:8080/api/user/profile", {
+      const response = await fetch("https://group7-osp-forked.onrender.com/api/user/profile", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

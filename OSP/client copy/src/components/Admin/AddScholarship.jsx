@@ -99,7 +99,7 @@ const AdminAddScholarship = () => {
       form.eligible_courses = JSON.stringify(form.eligible_courses);
       const formct = JSON.stringify(form);
       const response = await fetch(
-        "http://localhost:8080/api/scholarship/addScholarship",
+        "https://group7-osp-forked.onrender.com/api/scholarship/addScholarship",
         {
           method: "POST",
           headers: {

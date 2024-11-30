@@ -13,7 +13,7 @@ const ViewApplicants = () => {
     const fetchApplicants = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/scholarship/${id}/applicants`,
+          `https://group7-osp-forked.onrender.com/api/scholarship/${id}/applicants`,
           {
             headers: {
               "Content-Type": "application/json",

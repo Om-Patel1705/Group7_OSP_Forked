@@ -19,7 +19,7 @@ const ScholarshipList = () => {
       console.log(userInfo);
       try {
         const response = await fetch(
-          `http://localhost:8080/api/user/getAppliedScholarships`,
+          `https://group7-osp-forked.onrender.com/api/user/getAppliedScholarships`,
           {
             method: "GET",
             headers: {

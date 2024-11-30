@@ -11,7 +11,7 @@ const Apply_Dashboard = () => {
     data: scholarships,
     ispending,
     error,
-  } = useFetch("http://localhost:8080/api/user/getlistforApplyscholarships");
+  } = useFetch("https://group7-osp-forked.onrender.com/api/user/getlistforApplyscholarships");
   const [showOptions, setShowOptions] = useState(null);
 
   const handleViewScholarship = (scholarship_id) => {

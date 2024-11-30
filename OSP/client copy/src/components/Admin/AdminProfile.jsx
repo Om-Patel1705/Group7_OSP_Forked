@@ -26,7 +26,7 @@ const AdminProfile = () => {
         const obj = JSON.parse(localStorage.getItem("userInfo"));
         console.log(obj.email);
         const response = await axios.get(
-          "http://localhost:8080/api/user/getuserprofile",
+          "https://group7-osp-forked.onrender.com/api/user/getuserprofile",
           {
             headers: {
               "Content-Type": "application/json",
@@ -78,7 +78,7 @@ const AdminProfile = () => {
 
       // Send a POST request to update the username only
       const response = await axios.post(
-        "http://localhost:8080/api/user/updateuserprofile",
+        "https://group7-osp-forked.onrender.com/api/user/updateuserprofile",
         {
           email: obj.email, // Use the existing email to identify the user
           name: profile.name, // Only update the username
