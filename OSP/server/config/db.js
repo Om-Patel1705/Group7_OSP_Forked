@@ -3,15 +3,15 @@ require("dotenv").config();
 
 const pool = new Pool({
 
-  // connectionString: process.env.DATABASE_URL,
-  // ssl:true
+  connectionString: process.env.DATABASE_URL,
+  ssl:true
 
-  host: "10.100.71.21",
-  port: 5432,
-  user: "202201106",
-  password: "Vraj@6610",
-  database: "202201106",
-  searchPath: ["osp"],
+  // host: "10.100.71.21",
+  // port: 5432,
+  // user: "202201106",
+  // password: "Vraj@6610",
+  // database: "202201106",
+  // searchPath: ["osp"],
 
 
  
