@@ -6,8 +6,8 @@ var transport = nodemailer.createTransport({
   secure: true,
   port: 465,
   auth: {
-    user: "seproject1705@gmail.com",
-    pass: "hhcz hmnw zbhm fazj",
+    user: process.env.user,
+    pass: process.env.pass,
   },
 });
 const generateOTP = () => {
