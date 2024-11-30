@@ -17,7 +17,7 @@ const { handeluploads } = require("../controller/uploadpdfs");
 const upload = require("../config/multer");
 const {
   getListforApplyscholarships,
-} = require("../controller/getlistforApplyScholarships");
+} = require("../controller/getListforApplyScholarships");
 const { applyForScholarship } = require("../controller/applyForScholarship");
 const { getScholarship } = require("../controller/getScholarship");
 const { getApplicantId } = require("../controller/getApplicantId");
