@@ -29,7 +29,7 @@ const LoginRegister = () => {
 
   const roleCheck = async (userInfo) => {
     try {
-      const response = await fetch(`${baseURL}/api/user/authRole`, {
+      const response = await fetch(`https://group7-osp-forked.onrender.com/api/user/authRole`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -76,7 +76,7 @@ const LoginRegister = () => {
     }
 
     try {
-      const response = await fetch(`${baseURL}/api/user/login`, {
+      const response = await fetch(`https://group7-osp-forked.onrender.com/api/user/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -113,7 +113,7 @@ const LoginRegister = () => {
   const handleRegisterSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(`${baseURL}/api/user/register`, {
+      const response = await fetch(`https://group7-osp-forked.onrender.com/api/user/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

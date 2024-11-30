@@ -20,7 +20,7 @@ const PrivateRoute = ({ children }) => {
         (async () => {
           try {
             // alert("Hi");
-            const response = await fetch(`${baseURL}/api/user/authRole`, {
+            const response = await fetch(`https://group7-osp-forked.onrender.com/api/user/authRole`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

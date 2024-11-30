@@ -26,7 +26,7 @@ const ViewScholarship = () => {
     const fetchScholarship = async () => {
       try {
         const response = await fetch(
-          `${baseURL}/api/scholarship/${scholarship_id}`,
+          `https://group7-osp-forked.onrender.com/api/scholarship/${scholarship_id}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -80,7 +80,7 @@ const ViewScholarship = () => {
 
   const handleDelete = () => {
     if (window.confirm("Are you sure you want to delete this scholarship?")) {
-      fetch(`${baseURL}/api/scholarship/deleteScholarship/${scholarship_id}`, {
+      fetch(`https://group7-osp-forked.onrender.com/api/scholarship/deleteScholarship/${scholarship_id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

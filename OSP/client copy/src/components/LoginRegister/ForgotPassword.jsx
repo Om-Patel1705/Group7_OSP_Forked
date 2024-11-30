@@ -20,7 +20,7 @@ const ForgotPassword = () => {
     event.preventDefault();
     setIsLoadingEmail(true);
     try {
-      const response = await fetch(`${baseURL}/api/passwordreset/`, {
+      const response = await fetch(`https://group7-osp-forked.onrender.com/api/passwordreset/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -49,7 +49,7 @@ const ForgotPassword = () => {
     event.preventDefault();
     setIsLoadingOtp(true);
     try {
-      const response = await fetch(` ${baseURL}/api/passwordreset/verify`, {
+      const response = await fetch(` https://group7-osp-forked.onrender.com/api/passwordreset/verify`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -85,7 +85,7 @@ const ForgotPassword = () => {
     setIsLoadingPassword(true);
     try {
       const response = await fetch(
-        `${baseURL}/api/passwordreset/setnewpassword`,
+        `https://group7-osp-forked.onrender.com/api/passwordreset/setnewpassword`,
         {
           method: "POST",
           headers: {
