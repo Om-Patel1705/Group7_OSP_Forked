@@ -35,7 +35,7 @@ const ForgotPassword = () => {
         alert(`Password reset link sent to ${email}`);
         setOtpSent(true);
       } else {
-        alert("There was an error sending the OTP. Please try again.");
+        alert(data.message);
       }
     } catch (err) {
       console.error("Error sending OTP:", err);
@@ -59,6 +59,8 @@ const ForgotPassword = () => {
           email: email,
         }),
       });
+
+     
 
       if (response.ok) {
         alert("OTP verified successfully");
