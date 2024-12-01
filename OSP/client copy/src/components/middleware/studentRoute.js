@@ -14,7 +14,7 @@ const StudentRoute = ({ children }) => {
       const userInfo = JSON.parse(storedUserInfo);
       setUser(userInfo); 
 
-      const storedRoleChecked = localStorage.getItem("roleChecked");
+      const storedRoleChecked = localStorage.getItem("roleChecked_student");
       if (!storedRoleChecked) {
 
         (async () => {
@@ -31,13 +31,13 @@ const StudentRoute = ({ children }) => {
 
             const result = await response.json();
             if (response.ok && ["student"].includes(result.role)) {
-              localStorage.setItem("roleChecked", "true");
+              localStorage.setItem("roleChecked_student", "true");
             } else {
               throw new Error("Not authorized");
             }
           } catch {
             localStorage.removeItem("userInfo");
-            localStorage.removeItem("roleChecked");
+            localStorage.removeItem("roleChecked_student");
             navigate("/"); 
           }
         })();

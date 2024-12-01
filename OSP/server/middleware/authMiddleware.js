@@ -21,13 +21,12 @@ const protect = async (req, res, next) => {
         `select * from osp.users where email = '${decoded.email}'`
       );
       req.user = temp.rows[0];
-      if (req.user.email == decoded.email && req.user.role==decoded.role) {
-        console.log("decoded");
+      if (req.user.email == decoded.email && req.user.role==decoded.role && req.user.role == "admin") {
         next();
       }
 
       else {
-        res.status(401).json({ mesasge: "Not Authorized, token failed" });
+        res.status(401).json({ mesasge: "Not Authorized, token failed" , logout:true });
         // console.log(req.user.email);
         // console.log(decoded);
       return;

@@ -38,6 +38,8 @@ const PrivateRoute = ({ children }) => {
           } catch {
             localStorage.removeItem("userInfo");
             localStorage.removeItem("roleChecked");
+            localStorage.removeItem("roleChecked_student");
+
             navigate("/"); 
           }
         })();

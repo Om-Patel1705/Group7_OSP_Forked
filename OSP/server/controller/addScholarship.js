@@ -68,6 +68,8 @@ const addScholarship = async (req, res) => {
       note,
     ];
 
+    // console.log(values);
+
     // Execute the insert query
     const result = await pool.query(insertQuery, values);
     const scholarship_id = result.rows[0].scholarship_id;

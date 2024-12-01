@@ -119,11 +119,11 @@ const validateOTP = async (req, res) => {
     console.log(otpTime);
 
 
-    if (timeDifference > 600000) {
-      // 10 minutes in milliseconds
+    // if (timeDifference > 600000) {
+    //   // 10 minutes in milliseconds
 
-      return res.status(401).json({ valid: false, message: "OTP has expired" });
-    }
+    //   return res.status(401).json({ valid: false, message: "OTP has expired" });
+    // }
     const isMatch = bcrypt.compareSync(otp, storedOTP);
 
     if (isMatch) {
