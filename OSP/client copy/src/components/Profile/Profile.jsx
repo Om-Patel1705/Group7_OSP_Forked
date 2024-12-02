@@ -81,7 +81,7 @@ const Profile = () => {
 
     setFormData((prev) => ({ ...prev, email: Femail }));
 
-    var endpoint3 = "http://localhost:8080/api/user/getpdfurls/";
+    var endpoint3 = "https://group7-osp-forked.onrender.com/api/user/getpdfurls/";
     endpoint3=endpoint3+Femail;
 
     (async () => {
@@ -276,7 +276,7 @@ const Profile = () => {
       [key]: "",
   }));  
 
-  const endpoint = `http://localhost:8080/api/user/clearpdf/${Femail}/${key}/`;
+  const endpoint = `https://group7-osp-forked.onrender.com/api/user/clearpdf/${Femail}/${key}/`;
 
   try {
   
