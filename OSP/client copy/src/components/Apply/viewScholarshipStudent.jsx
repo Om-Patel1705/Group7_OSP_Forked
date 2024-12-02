@@ -55,7 +55,7 @@ const ViewScholarshipStudent = () => {
         setLoading(false);
       }
 
-      const endpoint = "http://localhost:8080/api/user/getemail/";
+      const endpoint = "https://group7-osp-forked.onrender.com/api/user/getemail/";
       const id = endpoint + userInfo.email;
   
       try {
@@ -85,7 +85,7 @@ const ViewScholarshipStudent = () => {
         return;
       }
 
-      const endpoint3 = "http://localhost:8080/api/user/getpdfurls/" + userInfo.email;
+      const endpoint3 = "https://group7-osp-forked.onrender.com/api/user/getpdfurls/" + userInfo.email;
 
       try {
         // Check if all required document URLs are present
