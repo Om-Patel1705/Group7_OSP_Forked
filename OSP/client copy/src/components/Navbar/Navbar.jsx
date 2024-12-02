@@ -14,6 +14,7 @@ const NavbarStudent = () => {
     }
     localStorage.removeItem("userInfo");
     localStorage.removeItem("roleChecked");
+    localStorage.removeItem("roleChecked_student");
     navigate("/");
   };
   const handleBack = () => {

@@ -6,7 +6,7 @@ import "../../index.css";
 import { ToastContainer, toast, Slide, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const images = ["/image1.png", "/image2.png", "/image3.png", "/image4.png"];
-var endpoint = "http://localhost:8080";
+var endpoint = "https://group7-osp-forked.onrender.com";
 
 const LoginRegister = () => {
   const [isRegistering, setIsRegistering] = useState(false);
@@ -93,13 +93,14 @@ const LoginRegister = () => {
       const data = await response.json();
       if (response.ok) {
         localStorage.setItem("userInfo", JSON.stringify(data));
-        localStorage.setItem("roleChecked", "true");
-
+        
         setUser(data);
-
+        
         if (data.role === "student") {
+          localStorage.setItem("roleChecked_student", "true");
           navigate("/student");
         } else if (data.role === "admin") {
+          localStorage.setItem("roleChecked", "true");
           navigate("/admin");
         }
       } else {

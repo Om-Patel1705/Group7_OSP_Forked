@@ -17,7 +17,7 @@ const { handeluploads } = require("../controller/uploadpdfs");
 const upload = require("../config/multer");
 const {
   getListforApplyscholarships,
-} = require("../controller/getlistforApplyScholarships");
+} = require("../controller/getListforApplyScholarships");
 const { applyForScholarship } = require("../controller/applyForScholarship");
 const { getScholarship } = require("../controller/getScholarship");
 const { getApplicantId } = require("../controller/getApplicantId");
@@ -31,7 +31,7 @@ const router = express.Router();
 
 router.route("/register").post(registerUser);
 router.route("/login").post(authUser);
-router.route("/authRole").post(protect, authRole);
+router.route("/authRole").post(authRole);
 
 router.get("/getuserprofile", getUserProfile);
 router.get("/getApplicantId", getApplicantId);

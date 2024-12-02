@@ -3,10 +3,6 @@ const pool = require("../config/db");
 const handelemail = async (req, res) => {
   const email = req.params.email;
 
-  console.log(email);
-
-  console.log(email);
-  console.log(email);
 
   try {
     const query = "SELECT * FROM osp.applicants WHERE email = $1";

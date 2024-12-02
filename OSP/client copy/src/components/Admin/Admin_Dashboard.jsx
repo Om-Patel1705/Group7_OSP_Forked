@@ -8,7 +8,7 @@ const Admin_Dashboard = () => {
     data: scholarships,
     ispending,
     error,
-  } = useFetch("http://localhost:8080/api/scholarship/getScholarships");
+  } = useFetch("https://group7-osp-forked.onrender.com/api/scholarship/getScholarships");
   const [showOptions, setShowOptions] = useState(null);
 
   const handleViewScholarship = (scholarship_id) => {

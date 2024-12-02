@@ -137,7 +137,7 @@ const AdminEditScholarship = () => {
       const formct = JSON.stringify(form);
 
       const response = await fetch(
-        `${baseURL}/api/scholarship/editScholarship/${scholarship_id}`,
+        `https://group7-osp-forked.onrender.com/api/scholarship/editScholarship/${scholarship_id}`,
         {
           method: "PUT",
           headers: {

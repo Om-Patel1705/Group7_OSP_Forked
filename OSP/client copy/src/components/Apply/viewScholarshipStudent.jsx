@@ -31,7 +31,7 @@ const ViewScholarshipStudent = () => {
     const fetchScholarship = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/user/viewscholarship/${scholarship_id}`
+          `https://group7-osp-forked.onrender.com/api/user/viewscholarship/${scholarship_id}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -167,7 +167,7 @@ if (!issaved) {
 
     try {
       const response1 = await fetch(
-        `http://localhost:8080/api/user/getApplicantId`,
+        `https://group7-osp-forked.onrender.com/api/user/getApplicantId`,
         {
           method: "GET",
           headers: {
@@ -194,7 +194,7 @@ if (!issaved) {
       const jsoneddata = JSON.stringify(applieddata);
       try {
         const response = await fetch(
-          `http://localhost:8080/api/user/applyForScholarship/${scholarship_id}`,
+          `https://group7-osp-forked.onrender.com/api/user/applyForScholarship/${scholarship_id}`,
           {
             method: "POST",
             headers: {

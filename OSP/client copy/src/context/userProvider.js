@@ -9,7 +9,7 @@ const UserProvider = ({ children }) => {
     const storedUser = localStorage.getItem('userInfo');
     return storedUser ? JSON.parse(storedUser) : null;
   });
-  const [baseURL, setBaseURL] = useState('http://localhost:8080');
+  const [baseURL, setBaseURL] = useState('https://group7-osp-forked.onrender.com');
   const navigate = useNavigate();
 
   useEffect(() => {
