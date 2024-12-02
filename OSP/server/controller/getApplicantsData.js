@@ -6,7 +6,7 @@ const getApplicantData = async (req, res) => {
   const student_id = req.query.id;
   const scholarship_id = req.query.scholarship_id;
 
-  // console.log(req.query);
+  
 
   try {
     let getQuery = `
@@ -26,6 +26,8 @@ const getApplicantData = async (req, res) => {
       a.parent_mobile,
       a.current_semester,
       a.year_of_admission,
+      a.current_cgpa_obtained,
+      a.current_cgpa_total,
       a.address_id,
       a.bank_account_no,
       a.college_id,
@@ -36,7 +38,15 @@ const getApplicantData = async (req, res) => {
       e.department_name,
       e.tuition_fees,
       e.non_tuition_fees,
-      ai.status  -- Added status column from applied_in table
+      ai.status, -- Status column from applied_in table
+      doc.income_certificate,
+      doc.bank_passbook,
+      doc.aadhar_card,
+      doc.tuition_fee_receipt,
+      doc.non_tuition_fee_receipt,
+      doc.class_10_mark_sheet,
+      doc.class_12_mark_sheet,
+      doc.current_education_mark_sheet
     FROM 
       osp.applicants a
     LEFT JOIN 
@@ -46,10 +56,12 @@ const getApplicantData = async (req, res) => {
     LEFT JOIN 
       osp.education_details e ON a.college_id = e.college_id
     LEFT JOIN 
-      osp.applied_in ai ON a.applicant_id = ai.applicant_id  -- Join with applied_in to get status
+      osp.applied_in ai ON a.applicant_id = ai.applicant_id
+    LEFT JOIN 
+      osp.applicant_documents doc ON a.email = doc.email -- Join with applicant_documents
     WHERE 
       a.applicant_id = '${student_id}'
-      AND ai.scholarship_id = '${scholarship_id}';  -- Added condition for scholarship_id
+      AND ai.scholarship_id = '${scholarship_id}'; -- Condition for scholarship_id
     `;
 
     const response = await pool.query(getQuery);

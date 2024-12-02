@@ -5,6 +5,7 @@ import { useContextState } from "../../context/userProvider";
 import "../../index.css";
 import { ToastContainer, toast, Slide, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import logo from "./Group1.png"
 const images = ["/image1.png", "/image2.png", "/image3.png", "/image4.png"];
 var endpoint = "https://group7-osp-forked.onrender.com";
 
@@ -170,7 +171,7 @@ const LoginRegister = () => {
         <div className="w-full max-w-md bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl shadow-lg p-8 border border-white/20">
           <div className="flex items-center justify-center">
             <img
-              src="/group1.png"
+              src={logo}
               alt="Logo"
               className=" w-24 h-28 object-contain animate-pulse-grow"
             />
