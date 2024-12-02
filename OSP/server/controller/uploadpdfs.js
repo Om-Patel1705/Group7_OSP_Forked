@@ -71,6 +71,8 @@ const handeluploads = async (req, res) => {
         SET ${dbColumn} = EXCLUDED.${dbColumn};
     `;
 
+    console.log(email, cloudinaryUrl);
+
     try {
       const result = await pool.query(update, [email, cloudinaryUrl]);
       return res.status(200).json({

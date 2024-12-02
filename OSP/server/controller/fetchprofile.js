@@ -3,7 +3,7 @@ const pool = require("../config/db");
 const fetchprofile = async (req, res) => {
   const email = req.params.email;
 
-  console.log(email);
+ // console.log(email);
 
   const query = `
        SELECT 
@@ -74,7 +74,7 @@ WHERE
     try {
       const { rows } = await pool.query(query, [email]);
       if (rows.length > 0) {
-        console.log(rows[0]); // Log for debugging
+       // console.log(rows[0]); // Log for debugging
         return res.status(200).json(rows[0]); // Send the first row as JSON response
       } else {
         return res.status(404).json({ message: "Data not found" });

@@ -21,6 +21,9 @@ const {
 const { applyForScholarship } = require("../controller/applyForScholarship");
 const { getScholarship } = require("../controller/getScholarship");
 const { getApplicantId } = require("../controller/getApplicantId");
+const { handelpdfurls } = require("../controller/handelpdfurls");
+const { handelclearpdf } = require("../controller/handelclearpdf");
+
 const {
   getAppliedScholarships,
 } = require("../controller/getAppliedScholarships");
@@ -43,7 +46,9 @@ router.route("/getAppliedScholarships").get(getAppliedScholarships);
 //client side
 router.get("/getemail/:email", handelemail);
 router.get("/getprofile/:email", fetchprofile);
+router.get("/getpdfurls/:email", handelpdfurls);
 router.post("/profile", handelprofiledata);
+router.post("/clearpdf/:email/:id", handelclearpdf);
 router.post("/pdf/:email/:key", upload.single("file"), handeluploads);
 
 module.exports = router;

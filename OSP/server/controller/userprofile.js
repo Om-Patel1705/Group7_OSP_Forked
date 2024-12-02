@@ -165,7 +165,7 @@ const handelprofiledata = async (req, res) => {
       collegeId = educationInsertResult.rows[0].college_id;
     }
 
-    console.log("clg", collegeId);
+    //console.log("clg", collegeId);
 
     // const insertUserQuery = `
     //     INSERT INTO osp.users (email, username, password, role)
@@ -291,7 +291,7 @@ const handelprofiledata = async (req, res) => {
 
         `;
 
-        console.log()
+        //console.log()
 
         const class10Institute = formData.class10Institute;
         const class10PassingDate = formData.class10PassingDate;

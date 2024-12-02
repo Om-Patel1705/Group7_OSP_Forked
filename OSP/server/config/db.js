@@ -3,6 +3,7 @@ require("dotenv").config();
 
 const pool = new Pool({
 
+
   connectionString: process.env.DATABASE_URL,
   ssl:true
 
@@ -13,13 +14,11 @@ const pool = new Pool({
   // database: "202201106",
   // searchPath: ["osp"],
 
-
- 
 });
 
 pool
   .connect()
-  .then(() => { 
+  .then(() => {
     console.log("Database is successfully Connected");
   })
   .catch((err) => {

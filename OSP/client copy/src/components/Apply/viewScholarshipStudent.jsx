@@ -22,6 +22,10 @@ const ViewScholarshipStudent = () => {
   const [error, setError] = useState(null);
   const { baseURL } = useContextState();
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  const [issaved, setIsSaved] = useState(false);
+
+
+  
 
   useEffect(() => {
     const fetchScholarship = async () => {
@@ -50,7 +54,76 @@ const ViewScholarshipStudent = () => {
         setError("Failed to fetch data");
         setLoading(false);
       }
-    };
+
+      const endpoint = "http://localhost:8080/api/user/getemail/";
+      const id = endpoint + userInfo.email;
+  
+      try {
+        const response = await fetch(id, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+  
+        if (response.ok) {
+          //console.log("Email exists in the database.");
+          setIsSaved(true);
+
+        } else if (response.status === 404) {
+          //console.log("Email not found in the database.");
+          setIsSaved(false);
+          return;
+        } else {
+          //console.error("An error occurred while checking the email.");
+          setIsSaved(false);
+          return;
+        }
+      } catch (error) {
+        console.error("Error checking email:", error);
+        setIsSaved(false);
+        return;
+      }
+
+      const endpoint3 = "http://localhost:8080/api/user/getpdfurls/" + userInfo.email;
+
+      try {
+        // Check if all required document URLs are present
+        const response = await fetch(endpoint3, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+  
+        if (response.ok) {
+          const data = await response.json();
+  
+          if (
+            data.incomeCertificate &&
+            data.bankPassbook &&
+            data.aadharcard &&
+            data.tuitionFeeReceipt &&
+            data.nonTuitionFeeReceipt &&
+            data.class10MarkSheet &&
+            data.class12MarkSheet &&
+            data.currentEducationMarkSheet
+          ) {
+            setIsSaved(true); // All documents are present, mark as saved
+          } else {
+            // console.log("Missing one or more required documents.");
+            setIsSaved(false); 
+          }
+        } else {
+          // console.error("Error fetching document URLs.");
+          setIsSaved(false);
+        }
+      } catch (error) {
+        console.error("Can't find uploaded documents:", error);
+        setIsSaved(false);
+      }
+
+  };
 
     fetchScholarship();
   }, [scholarship_id]);
@@ -67,16 +140,30 @@ const ViewScholarshipStudent = () => {
     return `${year}-${month}-${day}`;
   };
   const handleApply = async (e) => {
-    e.preventDefault();
+    e.preventDefault();    
+    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+
+if (!issaved) {
+  alert("Please complete your profile section and save it.");
+  return;
+}
+
+
 
     const confirmSave = window.confirm(
-      "Are you sure you want to Apply for this Scholarship details?"
+      "Are you sure you want to Apply for this Scholarship ?"
     );
     if (!confirmSave) {
-      return; // Exit the function if user does not confirm
+      return; 
     }
 
-    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+
+    
+
+
+
+
+
 
     try {
       const response1 = await fetch(
